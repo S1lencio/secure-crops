@@ -29,7 +29,7 @@ public abstract class FarmlandMixin extends Block {
     }
 
     @Inject(method="onLandedUpon", cancellable = true, at = @At(value = "INVOKE", target = "Lnet/minecraft/block/FarmlandBlock;setToDirt(Lnet/minecraft/entity/Entity;Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V"))
-    public void cancelTrample(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance, CallbackInfo ci) {
+    public void cancelTrample(World world, BlockState state, BlockPos pos, Entity entity, double fallDistance, CallbackInfo ci) {
 
         ServerWorld serverWorld = (ServerWorld) world;
 
